@@ -167,6 +167,9 @@ Data survives:
 ## 📟 PCB Design 
 
 The PCB was designed in EasyEDA and should be correct as is but because I have not revived my order from JLCPCB I can not confirm that it is working.  I will report back after testing.
+
+If you would like to order this board From JLCPCB you can do it here:
+https://jlcpcb.com/?from=BGJR
 <img width="601" height="772" alt="image" src="https://github.com/user-attachments/assets/fd5a052f-93bc-454d-9974-ee183d0997d5" />
 <img width="597" height="763" alt="image" src="https://github.com/user-attachments/assets/61829956-e4e9-4b4a-b369-dfafed91b19f" />
 <img width="606" height="772" alt="image" src="https://github.com/user-attachments/assets/c0077005-39e2-4c1b-9b50-5e90d34dd646" />
