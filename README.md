@@ -80,7 +80,9 @@ MQ135 A0 ── 20kΩ ──+── GPIO 6 (ESP32 ADC)
 
 ## 💻 Software Setup
 
-I use the Arduino IDE so the instructions are for that
+I use the Arduino IDE so the instructions are for that.
+
+<img width="1148" height="617" alt="image" src="https://github.com/user-attachments/assets/727b0872-7ca6-4591-9c24-f6e8bddf395b" />
 
 ### 1. Install ESP32 Board Support
 
