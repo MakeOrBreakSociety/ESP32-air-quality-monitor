@@ -1,4 +1,6 @@
 # ESP32 Air Quality Monitor (MQ‑135 + DHT22)
+Please be kind to me as this is my first start to finish project 🤣
+
 This is a simple air quality monitor that I built with simple and cheap parts
 
 This was all built with the Waveshare ESP32-S3-Zero as a backbone.  but any similar ESP32 with the same footprint and analog on pin 6 will work!
