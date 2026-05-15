@@ -25,12 +25,12 @@ The PCB design is currently untested, but I have placed an order for them and wi
 
 ## 🧰 Hardware Required
 
-- ESP32‑S3‑Zero (Waveshare or similar)
-- MQ‑135 Air Quality Sensor Module (4‑pin)
-- DHT22 / AM2302 Temperature & Humidity Sensor (3‑pin module)
-- 10k resistor
-- 20k resistor
-- (Optional) 0.1µF ceramic capacitor (for filtering)
+- ESP32‑S3‑Zero (Waveshare or similar) - $8.29 CAD - www.aliexpress.com/item/1005009800317016.html
+- MQ‑135 Air Quality Sensor Module (4‑pin) - $1.39 CAD - www.aliexpress.com/item/1005007710261547.html
+- DHT22 / AM2302 Temperature & Humidity Sensor (3‑pin module) - $2.89 CAD - www.aliexpress.com/item/1005007188394422.html
+- 10k resistor - Large pack $5.49 CAD - www.aliexpress.com/item/1005011772534173.html
+- 20k resistor - Included in above pack
+- (Optional) 0.1µF/100nF ceramic capacitor - $4.41 CAD https://www.aliexpress.com/item/1005003979789534.html
 - Breadboard or PCB
 
 
@@ -130,4 +130,17 @@ const char* pageTitle = "My Air Monitor";       // dashboard title
  - http://air-monitor.local replace "air-monitor" with what you set as the network name
 
 
+## 📟 PCB Design 
+
+The PCB was designed in EasyEDA and should be correct as is but because I have not revived my order from JLCPCB I can not confirm that it is working.  I will report back after testing
+<img width="601" height="772" alt="image" src="https://github.com/user-attachments/assets/fd5a052f-93bc-454d-9974-ee183d0997d5" />
+<img width="597" height="763" alt="image" src="https://github.com/user-attachments/assets/61829956-e4e9-4b4a-b369-dfafed91b19f" />
+<img width="606" height="772" alt="image" src="https://github.com/user-attachments/assets/c0077005-39e2-4c1b-9b50-5e90d34dd646" />
+
+Let me know if you'd like to see something differant and i'll see what I can do
+
+https://www.youtube.com/@MakeOrBreakSociety
+https://x.com/MoBS1337
+https://www.facebook.com/MakeOrBreakSociety
+https://linktr.ee/makeorbreaksociety
 
