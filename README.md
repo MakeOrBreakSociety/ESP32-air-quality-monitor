@@ -129,6 +129,38 @@ const char* pageTitle = "My Air Monitor";       // dashboard title
 3. Optional (if supported by your network):
  - http://air-monitor.local replace "air-monitor" with what you set as the network name
 
+## 📊 Air Quality Levels
+
+| Raw Value | Level    |
+|-----------|----------|
+| < 1200    | GREAT    |
+| 1200–1500 | GOOD     |
+| 1500–1800 | MODERATE |
+| 1800–2200 | POOR     |
+| > 2200    | WARNING  |
+
+
+## 💾 Data Persistence
+
+Sensor history is saved to flash memory
+Data survives:
+- Power loss
+- Reboots
+- Reflashing firmware
+
+## ⚠️ Notes & Limitations
+
+1. ESP32 ADC is not precision‑grade so values are relative
+2. MQ‑135 requires warm‑up (~24h for best stability)
+3. .local hostname may not work reliably on Windows Use IP address if needed
+
+## 🔮 Future Improvements
+
+- ESPHome + Home Assistant integration
+- Proper MQ‑135 calibration (CO₂ estimation)
+- Alerts / notifications
+- OTA updates
+- Enclosure design
 
 ## 📟 PCB Design 
 
