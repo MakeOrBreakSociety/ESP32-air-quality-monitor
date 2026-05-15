@@ -76,3 +76,58 @@ MQ135 A0 ── 20kΩ ──+── GPIO 6 (ESP32 ADC)
 <img width="512" height="691" alt="image" src="https://github.com/user-attachments/assets/9793f6ce-34d4-44a0-8a93-345cac12e789" />
 
 
+## 💻 Software Setup
+
+I use the Arduino IDE so the instructions are for that
+
+### 1. Install ESP32 Board Support
+
+- Open Arduino IDE
+- Go to: Tools → Board → Boards Manager
+- Install: ESP32 by Espressif Systems
+
+
+### 2. Install Required Libraries
+
+In Arduino IDE goto: Sketch → Include Library → Manage Libraries
+
+Install:
+- **DHT sensor library** by Adafruit
+- **Adafruit Unified Sensor**
+
+
+### 3. Built‑in Libraries (included automatically)
+
+No need to install:
+
+- WiFi
+- WebServer
+- Preferences
+- ESPmDNS
+
+These come with the ESP32 board package.
+
+---
+
+## ⚙️ Configuration
+
+At the top of the sketch, set the following:
+```
+const char* ssid = "YOUR_WIFI_NAME";            // Wifi Name
+const char* password = "YOUR_WIFI_PASSWORD";    // Wifi Password
+
+const char* hostName = "air-monitor";           // optional network name
+const char* pageTitle = "My Air Monitor";       // dashboard title
+```
+
+## 🌐 Usage
+
+1. Upload the sketch
+2. Open Serial Monitor (115200 baud)
+ - Note the IP address
+ - Open in browser: http://#.#.#.#
+3. Optional (if supported by your network):
+ - http://air-monitor.local replace "air-monitor" with what you set as the network name
+
+
+
