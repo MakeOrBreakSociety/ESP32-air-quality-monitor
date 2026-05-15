@@ -11,3 +11,13 @@ I had a heck of a time trying to get the hostname to work on a computer browser 
 
 The PCB design is currently untested but I have placed an order for them and will update this if it all works.
 
+## 📸 Features
+- ✅ ESP32‑S3 web server (no external services required)
+- ✅ Live sensor readings
+- ✅ Air quality classification (Great → Warning)
+- ✅ Interactive graphs:
+  - Last 60 minutes
+  - Last 24 hours
+- ✅ Data persistence (survives reboot/power outage)
+- ✅ Optional hostname (`.local`)
+- ✅ Fully self-contained solution
