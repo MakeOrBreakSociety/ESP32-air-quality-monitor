@@ -21,3 +21,52 @@ The PCB design is currently untested but I have placed an order for them and wil
 - ✅ Data persistence (survives reboot/power outage)
 - ✅ Optional hostname (`.local`)
 - ✅ Fully self-contained solution
+
+
+## 🧰 Hardware Required
+
+- ESP32‑S3‑Zero (Waveshare or similar)
+- MQ‑135 Air Quality Sensor Module (4‑pin)
+- DHT22 / AM2302 Temperature & Humidity Sensor (3‑pin module)
+- 10k resistor
+- 20k resistor
+- (Optional) 0.1µF ceramic capacitor (for filtering)
+- Breadboard or PCB
+
+
+## 🔌 Wiring
+
+### DHT22
+
+| Pin  | ESP32  |
+|------|--------|
+| VCC  | 3.3V   |
+| DATA | GPIO 5 |
+| GND  | GND    |
+
+
+### MQ‑135 (IMPORTANT)
+
+| Pin | Connection               |
+|-----|--------------------------|
+| VCC | 5V                       |
+| GND | GND                      |
+| A0  | Voltage Divider → GPIO 6 |
+| DO  | Not used                 |
+
+
+### Voltage Divider (REQUIRED)
+
+MQ135 A0 ── 20kΩ ──+── GPIO 6 (ESP32 ADC)
+                   |
+                 10kΩ
+                   |
+                  GND
+
+### Optional: Noise Filtering Capacitor
+
+(GPIO 6 junction) ──|0.1µF|── GND
+                
+<img width="512" height="691" alt="image" src="https://github.com/user-attachments/assets/9793f6ce-34d4-44a0-8a93-345cac12e789" />
+
+
