@@ -57,11 +57,14 @@ The PCB design is currently untested but I have placed an order for them and wil
 
 ### Voltage Divider (REQUIRED)
 
+```
 MQ135 A0 ── 20kΩ ──+── GPIO 6 (ESP32 ADC)
                    |
                  10kΩ
                    |
                   GND
+```
+
 
 ### Optional: Noise Filtering Capacitor
 
