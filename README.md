@@ -171,7 +171,7 @@ The PCB was designed in EasyEDA and should be correct as is but because I have n
 <img width="597" height="763" alt="image" src="https://github.com/user-attachments/assets/61829956-e4e9-4b4a-b369-dfafed91b19f" />
 <img width="606" height="772" alt="image" src="https://github.com/user-attachments/assets/c0077005-39e2-4c1b-9b50-5e90d34dd646" />
 
-Let me know if you'd like to see something differant and i'll see what I can do.
+Let me know if you'd like to see something changed and i'll see what I can do.
 - https://www.youtube.com/@MakeOrBreakSociety
 - https://x.com/MoBS1337
 - https://www.facebook.com/MakeOrBreakSociety
