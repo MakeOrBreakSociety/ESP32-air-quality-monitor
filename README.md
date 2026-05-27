@@ -5,7 +5,7 @@ This is a simple air quality monitor that I built with simple and cheap parts
 
 This was all built with the Waveshare ESP32-S3-Zero as a backbone.  But any similar ESP32 with the same footprint, power\ground pin location, and analog on pin 6 will work!
 
-The code was written completely by me at first but was well over 700 lines of code.  With the assistance of an LLM we compressed the code down to just over 300 lines.  For the most part the code is for testing and proof of concept as it will all be pulled into Home Assistant with ESPhome after I get the PCB's in to validate it works.  I did the YAML before getting the boards in, instructions are here https://github.com/MakeOrBreakSociety/ESP32-air-quality-monitor/blob/main/README.md#esphome-yaml-instructions.
+The code was written completely by me at first but was well over 700 lines of code.  With the assistance of an LLM we compressed the code down to just over 300 lines.  For the most part the code is for testing and proof of concept as it will all be pulled into Home Assistant with ESPhome after I get the PCB's in to validate it works.  I did the YAML before getting the boards in, instructions are here https://github.com/MakeOrBreakSociety/ESP32-air-quality-monitor/tree/main#esphome-yaml-instructions.
 
 What it does it do currently?  Using the MQ135 and DHT-22 Modules the ESP creates an internal webpage that tracks Temperature, Humidity, and Air Quality. It then charts it on a 60 min and 24 hour graph.  It also saves the charts, so they survive a restart.  However, it does not track time so if it is down for 20 min that gap does not show up it just continues where it left off.  
 
