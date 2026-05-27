@@ -160,9 +160,9 @@ Data survives:
 
 ## 🔮 Future Improvements
 
-- ~~ESPHome + Home Assistant integration~~
+- ~~ESPHome + Home Assistant integration~~ <ins>**Done**</ins>
 - Proper MQ‑135 calibration (CO₂ estimation)
-- ~~Alerts / notifications~~ **Included in ESPHome**
+- ~~Alerts / notifications~~ <ins>**Included in ESPHome**</ins>
 - ~~OTA updates~~ <ins>**Included in ESPHome**</ins>
 - Enclosure design
 
