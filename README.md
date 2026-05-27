@@ -166,7 +166,7 @@ Data survives:
 - ~~OTA updates~~ <ins>**Included in ESPHome**</ins>
 - Enclosure design
 
-## ESPH YAML instructions
+## ESPHome YAML instructions
 
 I have made an ESPH YAML to integrate this in to Home Assistant.  Here's the best way to get it all imported:
 
