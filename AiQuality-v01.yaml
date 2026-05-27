@@ -1,0 +1,109 @@
+# ============================================================
+# ESP32 Air Quality Monitor (MQ-135 + DHT22)
+# ESPHome Configuration
+# ============================================================
+
+esphome:
+  name: air-quality-01
+  friendly_name: Air Quality 01
+
+esp32:
+  board: waveshare_esp32_s3_zero
+  framework:
+    type: esp-idf
+
+# ============================================================
+# SYSTEM
+# ============================================================
+
+logger:
+
+api:
+
+ota:
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  ap:
+    ssid: "Air-Quality-01 Fallback Hotspot"
+    password: "REPLACE_ME"
+
+captive_portal:
+
+# ============================================================
+# SENSORS
+# ============================================================
+
+sensor:
+
+  # ------------------------------------------------------------
+  # DHT22 - Temperature & Humidity
+  # ------------------------------------------------------------
+  - platform: dht
+    pin: GPIO5
+    model: DHT22
+
+    temperature:
+      name: "Temperature"
+      id: temp_sensor
+
+    humidity:
+      name: "Humidity"
+      id: humidity_sensor
+
+    update_interval: 10s
+
+  # ------------------------------------------------------------
+  # MQ-135 - Air Quality (Analog via Voltage Divider)
+  # ------------------------------------------------------------
+  - platform: adc
+    pin: GPIO6
+    name: "Air Quality Raw"
+    id: air_raw
+
+    update_interval: 10s
+    attenuation: 12db
+
+    unit_of_measurement: ""
+    device_class: ""
+    state_class: "measurement"
+
+    filters:
+      - multiply: 1000
+      - round: 0
+      - sliding_window_moving_average:
+          window_size: 10
+          send_every: 1
+
+  # ------------------------------------------------------------
+  # System Monitoring
+  # ------------------------------------------------------------
+  - platform: uptime
+    name: "ESP Uptime"
+
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    update_interval: 60s
+
+# ============================================================
+# TEXT SENSORS
+# ============================================================
+
+text_sensor:
+
+  # ------------------------------------------------------------
+  # Air Quality Status
+  # ------------------------------------------------------------
+  - platform: template
+    name: "Air Quality Status"
+
+    update_interval: 10s
+
+    lambda: |-
+      if (id(air_raw).state < 1200) return {"GREAT"};
+      if (id(air_raw).state < 1500) return {"GOOD"};
+      if (id(air_raw).state < 1800) return {"MODERATE"};
+      if (id(air_raw).state < 2200) return {"POOR"};
+      return {"WARNING"};
