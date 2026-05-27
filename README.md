@@ -166,6 +166,33 @@ Data survives:
 - OTA updates
 - Enclosure design
 
+## ESPhome YAML instructions
+
+I have made an ESPhome YAML to intigrate this in to Home Assistant.  Here's the best way to get it all importat:
+
+1. In home assistant goto settings > Apps > Install app > the search for "ESPHome Device Builder" and click install.  Don't install the ones that say experimental.  Once it's installed click all 4 sliders to on.  This is just my prefferance but read them and decide for yourself <img width="1280" height="713" alt="image" src="https://github.com/user-attachments/assets/116cb37e-f5a0-46e3-8965-ab058c7d40af" />
+
+2. Once installed open the web UI and click "+ New Device" in the bottom right then click continue and click new device setup. ****You may be asked to set up your wifi ssid and password if you are do that as well**** Name the device "Air Quality" I named mine "Air Quality 02" because I already have 1 so I want to be able to tell them appart. Now this part is important!  Un check the box at the bottom that says "Use recomended settings" then click ESP32-S3. go all the way to the bottom and click on "Waveshare ESP32-S3-Zero" and click next.  Finally click skip.<img width="1388" height="182" alt="image" src="https://github.com/user-attachments/assets/da86f320-3ea7-487b-a419-ba5a18872340" />
+
+3. Now that you have the device click edit and goto the bottom of the file where it says "captive_portal:" click the line below that and hit enter to give us an extra row of space.  Now in GITHUB click the file at the top that says AiQuality-v01.yaml Copy everything under "captive_portal:" and paste it into the open space at the bottom of your ESPhome YAML.  the "captive_portal:" part should now look something like this:<img width="538" height="585" alt="image" src="https://github.com/user-attachments/assets/3c1e6db7-711f-4015-81ec-f88f6574ac63" />
+
+4. Now Click save at the top right and then the X at the top left.  Now click the 3 dots and click Validate if all is good you can now click install!
+
+5. To install this I have had the best luck with Manual download.  This will take a while, for me it was about 12 min when it's done click Factory format and the file will download and you can click close.<img width="1392" height="180" alt="image" src="https://github.com/user-attachments/assets/f7cbb648-f506-469e-af94-a773ccce2115" />
+
+6. Now that the file is downloaded plug in your esp and goto https://web.esphome.io/ click connect and select your esp and port. in my case it was "USB JTAG/serial debug unit (COM10)" then click instal then choose file and browse to the file downloaded from ESPhome then click install and wait for it to finish flashing
+
+7. Once it's done click logs and make sure it shows that it connected to your network if like me you havnt connected all your Sensors yet then you will get comunication Failed warrnings, that's ok.  if you already have everything connected you won't see anything like that.  once you see boot seems successful your done here<img width="720" height="472" alt="image" src="https://github.com/user-attachments/assets/90df8f23-fc21-431d-b496-5b35170c4fb6" />
+
+8. Next go back into ESPHome and if your Home assistan and your ESP are on the same network you should see it say ONLINE in the top right.  If it does click LOGS then wirelessly and confirm that you are getting live data.<img width="706" height="456" alt="image" src="https://github.com/user-attachments/assets/2a9f2f7b-aa7c-47c6-af36-5ba3316dc348" />
+ while your in here note down the IP address it connected to.
+
+9. Now your on the home strech.  In Home Assistant click settings then devices and services at the top click devices then look for Air Quality or whatever you named it in step 2 if like me it dosn't show there click add device at the bottom right type in ESPHome and enter the IP address where it says host and you can leave the port alone.  once it finds the device tell it where it's located if you have differant rooms set up.
+
+10. Now in the middle where it shows Sensors click Add to dashboard and add it to where you want to see it. Now you're done! Congradulations<img width="1028" height="498" alt="image" src="https://github.com/user-attachments/assets/e98cbcb2-6e1e-4f83-8106-e53af3f1ffe2" />
+
+11. There is a ton of stats and charting and automations you can do now that you have it added in to Home Assistant but that is beyond this tutorial.
+
 ## 📟 PCB Design 
 
 The PCB was designed in EasyEDA and should be correct as is but because I have not revived my order from JLCPCB I can not confirm that it is working.  I will report back after testing.
