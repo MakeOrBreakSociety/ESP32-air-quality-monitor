@@ -5,7 +5,7 @@ This is a simple air quality monitor that I built with simple and cheap parts
 
 This was all built with the Waveshare ESP32-S3-Zero as a backbone.  But any similar ESP32 with the same footprint, power\ground pin location, and analog on pin 6 will work!
 
-The code was written completely by me at first but was well over 700 lines of code.  With the assistance of an LLM we compressed the code down to just over 300 lines.  For the most part the code is for testing and proof of concept as it will all be pulled into Home Assistant with ESPhome after I get the PCB's in to validate it works.  I did the YAML before getting the boards in, instructions are here https://github.com/MakeOrBreakSociety/ESP32-air-quality-monitor/tree/main#esphome-yaml-instructions.
+The code was written completely by me at first but was well over 700 lines of code.  With the assistance of an LLM we compressed the code down to just over 300 lines.  For the most part the code is for testing and proof of concept as it will all be pulled into Home Assistant with ESPH after I get the PCB's in to validate it works.  I did the YAML before getting the boards in, instructions are here https://github.com/MakeOrBreakSociety/ESP32-air-quality-monitor/tree/main#esphome-yaml-instructions.
 
 What it does it do currently?  Using the MQ135 and DHT-22 Modules the ESP creates an internal webpage that tracks Temperature, Humidity, and Air Quality. It then charts it on a 60 min and 24 hour graph.  It also saves the charts, so they survive a restart.  However, it does not track time so if it is down for 20 min that gap does not show up it just continues where it left off.  
 
@@ -166,21 +166,21 @@ Data survives:
 - ~~OTA updates~~ <ins>**Included in ESPHome**</ins>
 - Enclosure design
 
-## ESPhome YAML instructions
+## ESPH YAML instructions
 
-I have made an ESPhome YAML to integrate this in to Home Assistant.  Here's the best way to get it all imported:
+I have made an ESPH YAML to integrate this in to Home Assistant.  Here's the best way to get it all imported:
 
 1. In home assistant goto settings > Apps > Install app > the search for "ESPHome Device Builder" and click install.  Don't install the ones that say experimental.  Once it's installed click all 4 sliders to on.  This is just my preference but read them and decide for yourself <img width="1280" height="713" alt="image" src="https://github.com/user-attachments/assets/116cb37e-f5a0-46e3-8965-ab058c7d40af" />
 
 2. Once installed open the web UI and click "+ New Device" in the bottom right then click continue and click new device setup. ****You may be asked to set up your wifi ssid and password if you are do that as well****. Name the device "Air Quality" I named mine "Air Quality 02" because I already have 1 so I want to be able to tell them apart. Now this part is important!  Un check the box at the bottom that says "Use recommended settings" then click ESP32-S3. go all the way to the bottom and click on "Waveshare ESP32-S3-Zero" and click next.  Finally click skip.<img width="1388" height="182" alt="image" src="https://github.com/user-attachments/assets/da86f320-3ea7-487b-a419-ba5a18872340" />
 
-3. Now that you have the device click edit and goto the bottom of the file where it says "captive_portal:" click the line below that and hit enter to give us an extra row of space.  Now in GITHUB click the file at the top that says AiQuality-v01.yaml Copy everything under "captive_portal:" and paste it into the open space at the bottom of your ESPhome YAML.  the "captive_portal:" part should now look something like this:<img width="538" height="585" alt="image" src="https://github.com/user-attachments/assets/3c1e6db7-711f-4015-81ec-f88f6574ac63" />
+3. Now that you have the device click edit and goto the bottom of the file where it says "captive_portal:" click the line below that and hit enter to give us an extra row of space.  Now in GITHUB click the file at the top that says AiQuality-v01.yaml Copy everything under "captive_portal:" and paste it into the open space at the bottom of your ESPH YAML.  the "captive_portal:" part should now look something like this:<img width="538" height="585" alt="image" src="https://github.com/user-attachments/assets/3c1e6db7-711f-4015-81ec-f88f6574ac63" />
 
 4. Now Click save at the top right and then the X at the top left.  Now click the 3 dots and click Validate if all is good you can now click install!
 
 5. To install this, I have had the best luck with Manual download.  This will take a while, for me it was about 12 min when it's done click Factory format and the file will download and you can click close.<img width="1392" height="180" alt="image" src="https://github.com/user-attachments/assets/f7cbb648-f506-469e-af94-a773ccce2115" />
 
-6. Now that the file is downloaded plug in your ESP and goto https://web.esphome.io/ click connect and select your ESP and port. in my case it was "USB JTAG/serial debug unit (COM10)" then click instal then choose file and browse to the file downloaded from ESPhome then click install and wait for it to finish flashing
+6. Now that the file is downloaded plug in your ESP and goto https://web.esphome.io/ click connect and select your ESP and port. in my case it was "USB JTAG/serial debug unit (COM10)" then click instal then choose file and browse to the file downloaded from ESPH then click install and wait for it to finish flashing
 
 7. Once it's done click logs and make sure it shows that it connected to your network if like me you haven’t connected all your sensors yet then you will get communication failed warnings, that's ok.  If you already have everything connected you won't see anything like that.  once you see boot seems successful your done here<img width="720" height="472" alt="image" src="https://github.com/user-attachments/assets/90df8f23-fc21-431d-b496-5b35170c4fb6" />
 
