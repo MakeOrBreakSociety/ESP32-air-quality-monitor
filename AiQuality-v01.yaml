@@ -71,7 +71,7 @@ sensor:
     state_class: "measurement"
 
     filters:
-      - multiply: 1000
+      - multiply: 16300    # This number should be 1000 on a breadboard and 16300 on the PCB
       - round: 0
       - sliding_window_moving_average:
           window_size: 10
