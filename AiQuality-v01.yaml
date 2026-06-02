@@ -71,8 +71,16 @@ sensor:
     state_class: "measurement"
 
     filters:
-      - multiply: 16300    # This number should be 1000 on a breadboard and 16300 on the PCB
+      # Uncomment ONE of the following depending on your setup:
+
+      # Breadboard / direct connection
+      #- multiply: 1000
+
+      # PCB version
+      #- multiply: 16300
+
       - round: 0
+
       - sliding_window_moving_average:
           window_size: 10
           send_every: 1
