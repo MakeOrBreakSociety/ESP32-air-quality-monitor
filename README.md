@@ -167,7 +167,7 @@ Data survives:
 - ~~ESPHome + Home Assistant integration~~ <ins>**Done**</ins>
 - ~~Alerts / notifications~~ <ins>**Included in ESPHome**</ins>
 - ~~OTA updates~~ <ins>**Included in ESPHome**</ins>
-~~- Enclosure design~~ https://www.printables.com/model/1749242-air-quality-monitor-case
+- ~~Enclosure design~~ https://www.printables.com/model/1749242-air-quality-monitor-case
 
 ## ESPHome YAML instructions
 
