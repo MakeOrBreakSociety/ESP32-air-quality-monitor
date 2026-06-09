@@ -7,6 +7,8 @@ This was all built with the Waveshare ESP32-S3-Zero as a backbone.  But any simi
 
 The arduino code was written completely by me at first but was well over 700 lines of code.  With the assistance of an LLM we compressed the code down to just over 300 lines.  For the most part the arduino code is for testing and proof of concept the YAML is the code intended to be used.  Instructions for the YAML are here https://github.com/MakeOrBreakSociety/ESP32-air-quality-monitor/tree/main#esphome-yaml-instructions.
 
+3D Printable case for the PCB can be found here: https://www.printables.com/model/1749242-air-quality-monitor-case
+
 ### What it does it do currently? 
 ### Arduino: 
 Using the MQ135 and DHT-22 Modules the ESP creates an internal webpage that tracks Temperature, Humidity, and Air Quality. It then charts it on a 60 min and 24 hour graph.  It also saves the charts, so they survive a restart.  However, it does not track time so if it is down for 20 min that gap does not show up it just continues where it left off. 
@@ -165,7 +167,7 @@ Data survives:
 - ~~ESPHome + Home Assistant integration~~ <ins>**Done**</ins>
 - ~~Alerts / notifications~~ <ins>**Included in ESPHome**</ins>
 - ~~OTA updates~~ <ins>**Included in ESPHome**</ins>
-- Enclosure design
+~~- Enclosure design~~ https://www.printables.com/model/1749242-air-quality-monitor-case
 
 ## ESPHome YAML instructions
 
